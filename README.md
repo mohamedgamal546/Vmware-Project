@@ -1,6 +1,6 @@
-# 🖥️ VMware vSphere Full Lab Project
+# 🖥️  VMware vSphere Enterprise-Level Virtualization Lab Project
 
-## 📌 Overview
+## 📌 Ovrview
 
 This project demonstrates the design and implementation of a complete **VMware vSphere lab environment** using nested virtualization.
 
