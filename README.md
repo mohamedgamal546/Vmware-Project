@@ -1,6 +1,6 @@
 # 🖥️  VMware vSphere Enterprise-Level Virtualization Lab Project
 
-## 📌 Ovrview
+## 📌 Overview
 
 This project demonstrates the design and implementation of a complete **VMware vSphere lab environment** using nested virtualization.
 
@@ -104,6 +104,16 @@ This project demonstrates a real-world enterprise vSphere environment with:
 ✔ Full VM lifecycle management  
 
 This project simulates production-level virtualization infrastructure used in modern data centers.
+
+## 🧠 Skills Demonstrated
+
+- VMware vSphere Administration  
+- Virtualized Infrastructure Design  
+- High Availability (HA) Configuration  
+- Distributed Resource Scheduling (DRS)  
+- vMotion Live Migration  
+- NFS Storage Integration  
+- DevOps Documentation with Git & GitHub  
 
 
 ## 👨‍💻 Author
