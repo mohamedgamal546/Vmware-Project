@@ -37,3 +37,55 @@ The environment consists of:
 - 2 ESXi Hosts running as virtual machines
 - Shared NFS Datastore
 - Management Network + VM Network + Migration Network
+## ⚙️ Project Implementation Steps
+
+### 1. ESXi Deployment
+- Installed two ESXi hosts on VMware Workstation
+- Configured management network and IP addressing
+
+### 2. vCenter Server Setup
+- Deployed VMware vCenter Server Appliance (VCSA)
+- Added ESXi hosts to vCenter inventory
+
+### 3. Cluster Configuration
+- Created a vSphere cluster
+- Enabled HA, DRS, and vMotion
+
+### 4. Networking Configuration
+- Configured virtual switches and port groups:
+  - Management Network
+  - VM Network
+  - vMotion Network
+
+### 5. Storage Configuration
+- Configured NFS shared datastore
+- Mounted storage on both ESXi hosts
+
+### 6. VM Operations
+- Created and managed virtual machines
+- Performed:
+  - Cloning
+  - Snapshots
+  - Template creation
+  - vMotion migration
+
+### 7. High Availability Testing
+- Simulated ESXi host failure
+- Verified automatic VM failover
+
+### 8. Fault Tolerance
+- Enabled FT for critical VM
+- Verified continuous availability
+
+
+## 📸 Screenshots & Evidence
+
+All steps were documented with screenshots including:
+
+- ESXi installation process
+- vCenter configuration
+- Cluster setup
+- vMotion migration
+- HA failover test
+- FT activation
+- VM lifecycle operations
