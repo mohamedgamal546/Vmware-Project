@@ -158,6 +158,10 @@ This project simulates production-level virtualization infrastructure used in mo
 - GitHub documentation workflow
 ---
 
+## 📄 Project Documentation
+
+👉 [View VMware Project PDF](Vmware%20Project.pdf)
+
 ## 👨‍💻 Author
 
 Mohamed Gamal Nasser  
