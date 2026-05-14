@@ -1,101 +1,164 @@
-# 🖥️ Highly Available Two-Tier Web Architecture on AWS
+# 🖥️ VMware vSphere Enterprise-Level Virtualization Lab Project
 
-## 📌 Project Overview
-This project demonstrates the design and implementation of a secure, highly available, and fault-tolerant two-tier web application architecture on AWS within a single AWS Region.
+## 📌 Overview
 
-The architecture is built using Amazon EC2 instances for both application and database layers, following AWS best practices for security, scalability, and high availability.
+This project demonstrates the design and implementation of a complete VMware vSphere lab environment using nested virtualization.
 
----
+The goal was to build a real-world enterprise-like infrastructure including:
 
-## 🏗️ Architecture Design
-
-The system follows a **Two-Tier Architecture** deployed across multiple Availability Zones:
-
-- **Application Tier**: Handles user traffic and application logic
-- **Database Tier**: Secure backend layer deployed in private subnets with no direct internet access
-
----
-
-## 📊 Architecture Diagram
-
-![AWS Two-Tier Architecture](two-tier-aws-architecture.png)
+- ESXi hosts  
+- vCenter Server  
+- Cluster configuration  
+- High Availability (HA)  
+- Distributed Resource Scheduler (DRS)  
+- vMotion  
+- Fault Tolerance (FT)  
+- Shared storage (NFS)  
+- Content Library  
+- VM lifecycle operations (clone, snapshot, templates)  
 
 ---
 
-## ☁️ AWS Services Used
+## 🏗️ Technologies Used
 
-- Amazon VPC
-- EC2 Instances
-- Internet Gateway (IGW)
-- NAT Gateway
-- Security Groups
-- Network ACLs
-- VPC Gateway Endpoint (S3)
-- Amazon S3
-- Route Tables
-- Availability Zones (Multi-AZ design)
+- VMware Workstation (Nested Virtualization)  
+- VMware ESXi  
+- VMware vCenter Server Appliance (VCSA)  
+- NFS Storage  
+- Linux (Ansible Server VM)  
+- Git & GitHub for documentation  
 
 ---
 
-## 🔐 Security Design
+## 🧱 Lab Architecture
 
-### 1. Database Tier Isolation
-- Database EC2 instances are deployed in private subnets
-- No direct internet access
-- Outbound internet access only via NAT Gateway for updates
+The environment consists of:
 
-### 2. Administrative Access Control
-- SSH access is restricted to corporate data center IP range only
-- No public SSH access allowed
-- Controlled via Security Groups
-
-### 3. Application-to-Database Communication
-- Database access is restricted to Application Tier only
-- Implemented using Security Group rules (least privilege access)
-
-### 4. Secure S3 Access
-- Database servers access S3 via VPC Gateway Endpoint
-- Ensures traffic does not traverse the public internet
+- 1 vCenter Server Appliance  
+- 2 ESXi Hosts running as virtual machines  
+- Shared NFS Datastore  
+- Management Network  
+- VM Network  
+- vMotion Network  
 
 ---
 
-## 📈 High Availability & Fault Tolerance
+## 🎯 Project Objectives
 
-- Multi-AZ deployment for improved availability
-- EC2 instances distributed across multiple Availability Zones
-- NAT Gateway enables secure outbound connectivity
-- Designed to eliminate single points of failure
-
----
-
-## 🔄 Architecture Flow
-
-User → Internet Gateway → Application Tier (EC2) → Database Tier (EC2 Private Subnet) → S3 (via VPC Endpoint)
+- Design a production-like virtualization environment  
+- Configure VMware vSphere infrastructure components  
+- Implement high availability and load balancing  
+- Enable live migration and fault tolerance  
+- Practice enterprise storage and networking design  
+- Document full infrastructure using GitHub  
 
 ---
 
-## 🚀 Key Features
+## ⚙️ Project Implementation Steps
 
-- Highly Available and Fault-Tolerant Design
-- Secure Private Database Layer (No Public Exposure)
-- Controlled Administrative Access from Corporate Network
-- Private AWS Service Connectivity (VPC Endpoint)
-- Scalable EC2-based Architecture
+### 1. ESXi Deployment
+- Installed two ESXi hosts on VMware Workstation  
+- Configured management network and IP addressing  
+
+### 2. vCenter Server Setup
+- Deployed VMware vCenter Server Appliance (VCSA)  
+- Added ESXi hosts to vCenter inventory  
+
+### 3. Cluster Configuration
+- Created a vSphere cluster  
+- Enabled HA, DRS, and vMotion  
+
+### 4. Networking Configuration
+- Configured virtual switches and port groups:
+  - Management Network  
+  - VM Network  
+  - vMotion Network  
+
+### 5. Storage Configuration
+- Configured NFS shared datastore  
+- Mounted storage on both ESXi hosts  
+
+### 6. VM Operations
+- Created and managed virtual machines  
+- Performed:
+  - Cloning  
+  - Snapshots  
+  - Template creation  
+  - vMotion migration  
+
+### 7. High Availability Testing
+- Simulated ESXi host failure  
+- Verified automatic VM failover  
+
+### 8. Fault Tolerance
+- Enabled FT for critical VM  
+- Verified continuous availability  
+
+---
+
+## 🧪 Testing & Validation
+
+- ESXi host failure simulation  
+- HA automatic VM restart  
+- vMotion live migration  
+- NFS datastore connectivity  
+- Snapshot creation and recovery  
+
+---
+
+## 📸 Screenshots & Evidence
+
+All steps were documented with screenshots including:
+
+- ESXi installation process  
+- vCenter configuration  
+- Cluster setup  
+- vMotion migration  
+- HA failover test  
+- FT activation  
+- VM lifecycle operations  
+
+---
+
+## 🚀 Project Outcome
+
+This project demonstrates a real-world enterprise vSphere environment with:
+
+✔ High availability (HA) implementation  
+✔ Load balancing using DRS  
+✔ Live migration using vMotion  
+✔ Fault tolerance for critical workloads  
+✔ Centralized management using vCenter  
+✔ Shared storage using NFS  
+✔ Full VM lifecycle management  
+
+This project simulates production-level virtualization infrastructure used in modern data centers.
 
 ---
 
 ## 🧠 Skills Demonstrated
 
-- AWS VPC Networking & Architecture Design
-- EC2 Deployment & Management
-- Security Groups & Network ACLs Configuration
-- High Availability Design (Multi-AZ)
-- Cloud Security Best Practices
-- Private Connectivity using NAT & VPC Endpoints
-- Infrastructure Design based on AWS Well-Architected Framework
+- VMware vSphere Administration  
+- Virtualized Infrastructure Design  
+- High Availability (HA) Configuration  
+- Distributed Resource Scheduling (DRS)  
+- vMotion Live Migration  
+- NFS Storage Integration  
+- DevOps Documentation with Git & GitHub  
 
+---
+
+## ⭐ Key Learnings
+
+- Enterprise virtualization architecture  
+- Datacenter networking concepts  
+- Storage integration using NFS  
+- HA/DRS/FT real-world behavior  
+- Infrastructure troubleshooting  
+- GitHub documentation workflow
 ---
 
 ## 👨‍💻 Author
 
-Mohamed Gamal Nasser
+Mohamed Gamal Nasser  
+
